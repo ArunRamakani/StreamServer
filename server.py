@@ -23,16 +23,12 @@ class DataStreamServer(datastream_pb2_grpc.GRPCDataStreamServicer):
     
 def main():
     
-    with open('server.key', 'rb') as f:
-        private_key = f.read()
-    with open('server.crt', 'rb') as f:
-        cert_chain = f.read()
-    server_creds = grpc.ssl_server_credentials( ( (private_key, cert_chain), ) )
+    
     
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
     datastream_pb2_grpc.add_GRPCDataStreamServicer_to_server(DataStreamServer(), server)     
     
-    server.add_secure_port(SERVER_ADDRESS,server_creds) 
+    server.add_insecure_port(SERVER_ADDRESS) 
     
     print("------------------start Python GRPC server")
     server.start()
