@@ -6,7 +6,7 @@ import grpc
 import datastream_pb2_grpc
 import datastream_pb2
 
-SERVER_ADDRESS = 'localhost:23333'
+SERVER_ADDRESS = '[::]:50051'
 
 
 class DataStreamServer(datastream_pb2_grpc.GRPCDataStreamServicer):
@@ -29,7 +29,7 @@ def main():
         cert_chain = f.read()
     server_creds = grpc.ssl_server_credentials( ( (private_key, cert_chain), ) )
     
-    server = grpc.server(futures.ThreadPoolExecutor())
+    server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
     datastream_pb2_grpc.add_GRPCDataStreamServicer_to_server(DataStreamServer(), server)     
     
     server.add_secure_port(SERVER_ADDRESS,server_creds) 
