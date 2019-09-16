@@ -13,6 +13,16 @@ class DataStreamServer(datastream_pb2_grpc.GRPCDataStreamServicer):
 
     def ClientStreaming(self, request_iterator, context):
         print("ClientStreaming called by client...")
+        metadata = context.invocation_metadata()
+        metadata_dict = {}
+        for c in metadata:
+            metadata_dict[c.key] = c.value
+            
+        if metadata_dict["network-international"] != "643524tr^#sX":
+            print("ClientStreaming called failed authentication...")
+            response = datastream_pb2.Response(result=datastream_pb2.DataStreamResult.FAILURE)
+            return response    
+        
         for request in request_iterator:
             print("Name = %s" % (request.user.name))
             print("User ID = %s" % (request.user.id))
