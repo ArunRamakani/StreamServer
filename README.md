@@ -2,7 +2,7 @@
 
 This is an example of unidirectional streaming using gRPC where the client streams data. This Stream server also uses metadata based authentication 
 
-# Deploy to Kubernetes 
+## Deploy to Kubernetes 
 
 To deploy the application in kubernetes use 
 
