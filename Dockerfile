@@ -10,6 +10,11 @@ COPY datastream_pb2_grpc.py /StreamServer
 COPY datastream_pb2.py /StreamServer
 COPY datastream.proto /StreamServer
 
+COPY ./client_blu/client_blu.proto /StreamServer/client_blu
+COPY ./client_blu/datastreamblu_pb2_grpc.py /StreamServer/client_blu
+COPY ./client_blu/datastreamblu_pb2.py /StreamServer/client_blu
+COPY ./client_blu/datastreamblu.proto /StreamServer/client_blu
+
 
 RUN python -m pip install grpcio
 RUN python -m pip install grpcio-tools googleapis-common-protos
