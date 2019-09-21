@@ -38,6 +38,9 @@ spec:
       containers:
       - name: grpc-data-stream
         image: arunramakani/stream-server
+        env:
+        - name: server
+          value: streamblu
         ports:
         - name: grpc-api
           containerPort: 50051
