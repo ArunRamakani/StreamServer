@@ -14,6 +14,6 @@ COPY datastream.proto /StreamServer
 RUN python -m pip install grpcio
 RUN python -m pip install grpcio-tools googleapis-common-protos
 
-CMD ["python", "./server.py"]
+CMD ["sh", "-c", "python ./server.py ${server}"]
 
 EXPOSE 23333
