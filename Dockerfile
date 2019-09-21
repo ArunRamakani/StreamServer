@@ -1,7 +1,7 @@
 FROM python:2.7
 
 WORKDIR /StreamServer
-MKDIR /StreamServer/client_blu
+RUN mkdir /StreamServer/client_blu
 
 ENV PATH "$PATH:/StreamServer"
 
