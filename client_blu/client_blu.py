@@ -12,9 +12,9 @@ def server_streaming(arr):
     print("--------------Call ClientStreaming Method Begin--------------")
     
     def request_messages(stub, messageArr):
-    for i in range(len(messageArr)):
-        request = datastreamblu_pb2.Request(user=(datastreamblu_pb2.User(id=messageArr[i].id, name=messageArr[i].name, message=messageArr[i].message)))
-        yield request
+        for i in range(len(messageArr)):
+            request = datastreamblu_pb2.Request(user=(datastreamblu_pb2.User(id=messageArr[i].id, name=messageArr[i].name, message=messageArr[i].message)))
+            yield request
 
     response = stub.ServerStreaming(request_messages(arr))
     

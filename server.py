@@ -6,9 +6,14 @@ import grpc
 import datastream_pb2_grpc
 import datastream_pb2
 
-import client_blu/client_blu
+
 
 from sys import argv
+
+import sys
+sys.path.insert(1, './client_blu')
+
+import client_blu
 
 SERVER_ADDRESS = '[::]:50051'
 
