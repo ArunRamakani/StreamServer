@@ -15,7 +15,7 @@ import client_blu
 
 
 # Host where teh server starts 
-SERVER_ADDRESS = 'localhost:50052'
+SERVER_ADDRESS = '[::]:50052'
 
 # Receive business logic unit host adress as service discovery
 script, bluhost = argv
