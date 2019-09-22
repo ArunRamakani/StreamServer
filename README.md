@@ -1,3 +1,5 @@
+[![](https://images.microbadger.com/badges/version/arunramakani/stream-server.svg)](https://microbadger.com/images/arunramakani/stream-server "Get your own version badge on microbadger.com") [![](https://img.shields.io/docker/pulls/arunramakani/stream-server.svg)](https://img.shields.io/docker/pulls/arunramakani/stream-server.svg) [![](https://img.shields.io/docker/stars/arunramakani/stream-server.svg)](https://img.shields.io/docker/stars/arunramakani/stream-server.svg)
+
 # Stream Server
 
 This is an example of unidirectional streaming using gRPC where the client streams data. This Stream server also uses metadata based authentication 
