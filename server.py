@@ -13,7 +13,6 @@ sys.path.insert(1, './client_blu')
 
 import client_blu
 
-
 # Host where teh server starts 
 SERVER_ADDRESS = '[::]:50052'
 
