@@ -40,7 +40,7 @@ spec:
         image: arunramakani/stream-server
         env:
         - name: server
-          value: streamblu
+          value: 34.69.90.135:80
         ports:
         - name: grpc-api
           containerPort: 50052
