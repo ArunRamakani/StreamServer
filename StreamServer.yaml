@@ -43,5 +43,5 @@ spec:
           value: streamblu
         ports:
         - name: grpc-api
-          containerPort: 50051
+          containerPort: 50052
       restartPolicy: Always
